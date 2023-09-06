@@ -1,9 +1,18 @@
-import './style.css'
+import './index.css';
+import { Assets, Sprite } from 'pixi.js';
+import setup from './lib/setup';
+////////////////
+// async function setup(wdPerc=90 , htPerc=90){
+// const wd = (window.innerWidth/100) * wdPerc;
+// const ht = (window.innerHeight/100) * htPerc;
+// const app = new Application({width: wd ,height: ht});
+// document.getElementById('canvas').appendChild(app.view);
+// return app;
+// }
 
-import { Application, Assets, Sprite } from 'pixi.js';
-
-const app = new Application();
-document.body.appendChild(app.view);
+////////////////
+async function run(wdPerc=90 , htPerc=90){
+const app = await setup(wdPerc, htPerc);
 
 const texture = await Assets.load('./images/bunny.png');
 
@@ -26,3 +35,6 @@ app.ticker.add(() => {
     // each frame we spin the bunny around a bit
     bunny.rotation += 0.1;
 });
+}
+
+run();
