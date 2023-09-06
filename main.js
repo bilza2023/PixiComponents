@@ -1,6 +1,7 @@
 import './index.css';
 import { Assets, Sprite } from 'pixi.js';
 import setup from './lib/setup';
+import Presentation from './lib/presentation';
 ////////////////
 // async function setup(wdPerc=90 , htPerc=90){
 // const wd = (window.innerWidth/100) * wdPerc;
@@ -13,6 +14,7 @@ import setup from './lib/setup';
 ////////////////
 async function run(wdPerc=90 , htPerc=90){
 const app = await setup(wdPerc, htPerc);
+const presentation = new Presentation(app);
 
 const texture = await Assets.load('./images/bunny.png');
 
@@ -35,6 +37,10 @@ app.ticker.add(() => {
     // each frame we spin the bunny around a bit
     bunny.rotation += 0.1;
 });
+
+window.setTimeout(() => {app.stage.removeChild(bunny)},5000);
+
+
 }
 
 run();
