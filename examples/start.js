@@ -35,6 +35,7 @@ app.ticker.add(() => {
     // each frame we spin the bunny around a bit
     bunny.rotation += 0.1;
 });
+window.setTimeout(() => {app.stage.removeChild(bunny)},5000);
 }
 
 run();
