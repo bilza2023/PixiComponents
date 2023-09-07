@@ -1,14 +1,12 @@
 import './index.css';
 import setup from './lib/setup';
-import Presentation from './lib/presentation';
 import Icons from './lib/icons';
 //====
-import {RectFill,Rect,Line,Grid,Circle,CircleFill,Text} from './lib/components';
+import {RectFill,Rect,Line,Grid,Circle,CircleFill,Text} from './index.js';
 ////////////////
 async function run(wdPerc=90){
 const {app,canvasWd,canvasHt} = await setup(wdPerc);
-
-const presentation = new Presentation(app,'#ebefae');
+app.renderer.background.color = '#f3f4c6';
 /////////////////////////////////////////////////////////
 const grid = new Grid(app,canvasWd,canvasHt,'#d9dd9d').draw();
 

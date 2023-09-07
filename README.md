@@ -1,4 +1,4 @@
-# PixiPresentation
+# Pixi Components
 
  Pixi Components is a library (based on pixi.js) to create reusable components that can be used in other libraries.
  
